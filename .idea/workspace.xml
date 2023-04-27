@@ -10,9 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aabd2bf0-3baf-4404-bf9b-4955b7ceb4cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipe/servlet/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipe/service/RegisterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/recipe/servlet/RegisterServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/my-recipes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/my-recipes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipe/dao/UserJdbcDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipe/dao/UserJdbcDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/recipe/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/recipe/servlet/LoginServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +181,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682580099794</updated>
       <workItem from="1682580100832" duration="863000" />
-      <workItem from="1682580986087" duration="16604000" />
+      <workItem from="1682580986087" duration="17817000" />
     </task>
     <servers />
   </component>

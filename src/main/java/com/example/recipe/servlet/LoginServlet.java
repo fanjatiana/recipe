@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
         if (user != null) {
             session.setAttribute("user", user);
             req.setAttribute("isError", "");
-            req.getRequestDispatcher("/WEB-INF/my-recipes.jsp").forward(req, resp);
             resp.sendRedirect(req.getContextPath() + "/userSession/my-recipes");
         } else {
             req.setAttribute("isError", "Oops utilisateur ou mot de passe inconnu");

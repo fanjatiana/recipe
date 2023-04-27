@@ -9,7 +9,24 @@ import java.util.List;
 public class UserJdbcDao implements UserDao {
     @Override
     public boolean create(User entity) {
-        return false;
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
+        Connection connection = ConnectionManager.getInstance();
+        boolean insertOk = false;
+        try{
+            preparedStatement = connection.prepareStatement("INSERT INTO user (firstname, lastname,urlPicture, email, password) VALUES (?,?,?,?,?)");
+            preparedStatement.setString(1, entity.getFirstname()); // définir des paramètre
+            preparedStatement.setString(2, entity.getLastname());
+            preparedStatement.setString(3, entity.getUrlPicture());
+            preparedStatement.setString(4, entity.getEmail());
+            preparedStatement.setString(5, entity.getPassword());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            insertOk = rowsAffected>0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return insertOk;
     }
 
     @Override
