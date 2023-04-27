@@ -33,7 +33,7 @@
                         <a class="nav-link active" aria-current="page" href="recipes">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout">Deconnexion</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/userSession/logout">Deconnexion</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
