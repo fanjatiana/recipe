@@ -7,8 +7,6 @@ import java.util.List;
 
 public class RecipeService {
 
-
-
     public List<Recipe> fetchAllRecipes(){
         RecipesJdbcDao recipesJdbcDao = new RecipesJdbcDao();
         return recipesJdbcDao.findAllRecipes();
