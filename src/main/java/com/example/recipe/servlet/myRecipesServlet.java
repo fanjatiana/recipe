@@ -11,15 +11,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/", "/recipes"})
-
-public class recipesServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/userSession/my-recipes")
+public class myRecipesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RecipeService recipeService = new RecipeService();
-        List<Recipe> recipes = recipeService.fetchAllRecipes();
-        req.setAttribute("recipes", recipes);
-        req.getRequestDispatcher("/WEB-INF/recipes.jsp").forward(req, resp);
-    }
+            RecipeService recipeService = new RecipeService();
+            List<Recipe> recipes = recipeService.fetchAllRecipes();
+            req.setAttribute("recipes", recipes);
+            req.getRequestDispatcher("/WEB-INF/my-recipes.jsp").forward(req, resp);
+        }
+
 }

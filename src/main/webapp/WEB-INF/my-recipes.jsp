@@ -33,10 +33,7 @@
                         <a class="nav-link active" aria-current="page" href="recipes">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Connexion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register">S'inscrire</a>
+                        <a class="nav-link" href="logout">Deconnexion</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -46,6 +43,7 @@
             </div>
         </div>
     </nav>
+    <h1>Gestion de ma liste de recettes</h1>
 </header>
 
 <main>
@@ -63,7 +61,6 @@
             </div>
         </c:forEach>
     </div>
-
 </main>
 <footer></footer>
 </body>
