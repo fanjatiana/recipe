@@ -21,7 +21,7 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="recipes">MesRecettes</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/userSession/my-recipes">MesRecettes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -30,11 +30,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="recipes">Accueil</a>
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/userSession/my-recipes">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                           href="${pageContext.request.contextPath}/userSession/create-recipe">Créer une recette</a>
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/userSession/create-recipe">Créer une recette</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/userSession/profile">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/userSession/logout">Deconnexion</a>
@@ -47,7 +49,7 @@
             </div>
         </div>
     </nav>
-    <h1>Créer une recette</h1>
+    <h1>Gestion de ma liste de recettes</h1>
 </header>
 <main>
     <div class="container-fluid">

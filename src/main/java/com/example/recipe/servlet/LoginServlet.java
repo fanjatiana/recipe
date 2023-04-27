@@ -22,12 +22,13 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userEmail = req.getParameter("email");
         String userPassword = req.getParameter("password");
+
         HttpSession session = req.getSession();
         req.setAttribute("isError", "");
         UserService userService = new UserService();
         User user = userService.getUser(userEmail,userPassword);
         if (user != null) {
-            session.setAttribute("user", user);
+            session.setAttribute("userEmail", userEmail);
             req.setAttribute("isError", "");
             resp.sendRedirect(req.getContextPath() + "/userSession/my-recipes");
         } else {

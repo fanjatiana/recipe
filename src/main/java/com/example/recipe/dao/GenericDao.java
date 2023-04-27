@@ -12,6 +12,7 @@ public interface GenericDao <T, ID> {
 
     T findById(ID id);
 
+
     T findByDate(Recipe dateRecipe);
 
     void update(T entity);

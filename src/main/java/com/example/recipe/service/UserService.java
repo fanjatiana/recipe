@@ -9,4 +9,9 @@ public class UserService {
         UserJdbcDao userJdbcDao = new UserJdbcDao();
         return userJdbcDao.findUserEmailAndPassword(email,password);
     }
+
+    public User getUserByEmail(String email){
+        UserJdbcDao userJdbcDao = new UserJdbcDao();
+        return userJdbcDao.findUserByEmail(email);
+    }
 }

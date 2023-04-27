@@ -39,6 +39,8 @@ public class UserJdbcDao implements UserDao {
         return null;
     }
 
+
+
     @Override
     public User findByDate(Recipe dateRecipe) {
         return null;
@@ -73,5 +75,27 @@ public class UserJdbcDao implements UserDao {
             e.printStackTrace();
         }
         return user;
+    }
+
+    @Override
+    public User findUserByEmail(String userEmail) {
+        Connection connection = ConnectionManager.getInstance();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, firstname, lastname, urlPicture, email, password FROM user WHERE email = ?");
+            preparedStatement.setString(1, userEmail);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String firstname = resultSet.getString("firstname");
+                String lastname = resultSet.getString("lastname");
+                String urlPicture = resultSet.getString("urlPicture");
+                String password = resultSet.getString("password");
+                return new User(id, firstname, lastname, urlPicture, userEmail, password);
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

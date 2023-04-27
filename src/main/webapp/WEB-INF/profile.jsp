@@ -14,10 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"></script>
-    <title>Mes recettes</title>
+    <title>Profil utilisateur</title>
 </head>
-<body>
 
+
+<body>
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -51,23 +52,23 @@
     </nav>
     <h1>Gestion de ma liste de recettes</h1>
 </header>
-
 <main>
-    <div class="container-fluid d-flex justify-content-around flex-wrap">
-        <c:forEach var="recipe" items="${recipes}">
-            <div class="card mb-3" id="${recipe.id}" style="width: 18rem;">
-                <img src="${recipe.urlImage}" class="card-img-top" alt="${recipe.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${recipe.title}</h5>
-                    <h6 class="card-title">${recipe.category}</h6>
-                    <p class="card-text">${recipe.description}</p>
-                    <p></p>
-                    <a href="${recipe.urlRecipe}" class="btn btn-primary">Consulter cette recette</a>
-                </div>
+    <div class="container-fluid" id="${user.id}">
+        <div class="card" style="width: 18rem;">
+            <img src="${user.urlPicture}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">${user.firstname}</p>
+                <p class="card-text">${user.lastname}</p>
+                <p class="card-text">${user.email}</p>
+                <p class="card-text" id="${user.password}">****</p>
             </div>
-        </c:forEach>
+            <div>
+                <a class="nav-link active" aria-current="page" href="edit-profile">Modifier mes informations</a>
+            </div>
+        </div>
     </div>
 </main>
+
 <footer></footer>
 </body>
 </html>
