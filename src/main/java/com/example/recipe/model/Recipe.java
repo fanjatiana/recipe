@@ -22,7 +22,9 @@ public class Recipe {
         this.urlImage = urlImage;
     }
 
-    public Recipe() {}
+
+
+
 
     public int getId() {
         return id;

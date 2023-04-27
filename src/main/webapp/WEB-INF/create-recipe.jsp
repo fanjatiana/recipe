@@ -33,7 +33,8 @@
                         <a class="nav-link active" aria-current="page" href="recipes">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/userSession/create-recipe">Créer une recette</a>
+                        <a class="nav-link active" aria-current="page"
+                           href="${pageContext.request.contextPath}/userSession/create-recipe">Créer une recette</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/userSession/logout">Deconnexion</a>
@@ -46,23 +47,42 @@
             </div>
         </div>
     </nav>
-    <h1>Gestion de ma liste de recettes</h1>
+    <h1>Créer une recette</h1>
 </header>
-
 <main>
-    <div class="container-fluid d-flex justify-content-around flex-wrap">
-        <c:forEach var="recipe" items="${recipes}">
-            <div class="card mb-3" id="${recipe.id}" style="width: 18rem;">
-                <img src="${recipe.urlImage}" class="card-img-top" alt="${recipe.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${recipe.title}</h5>
-                    <h6 class="card-title">${recipe.category}</h6>
-                    <p class="card-text">${recipe.description}</p>
-                    <p></p>
-                    <a href="${recipe.urlRecipe}" class="btn btn-primary">Consulter cette recette</a>
-                </div>
+    <div class="container-fluid">
+        <form method="post" action="${pageContext.request.contextPath}/userSession/create-recipe">
+            <div class="input-group mb-3">
+                <label for="recipeTitle">Titre</label>
+                <input type="text" class="form-control" id="recipeTitle" name="recipeTitle" required>
             </div>
-        </c:forEach>
+
+            <div class="input-group mb-3">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" name="description" required>
+            </div>
+            <select class="form-select" aria-label="Categorie de la recette">
+                <option name="category" value="1" selected>Entrée</option>
+                <option name="category" value="2">Plat</option>
+                <option name="category" value="3">Dessert</option>
+            </select>
+            <div class="input-group mb-3">
+                <label for="description">Ajouter le lien de la recette </label>
+                <input type="text" class="form-control" name="urlRecipe" required>
+            </div>
+            <div class="input-group mb-3">
+                <label for="dateRecipe">Selectionner la  date d'aujourd'hui</label>
+                <input type="date" class="form-control" id="dateRecipe" name="dateRecipe" required>
+            </div>
+            <div class="mb-3">
+                <Label for="urlImage" class="contrôle-label"> Ajouter une image
+                    <Input id="urlImage" name="urlImage" type="file" classe multiple="file-chargement" required>
+                </Label>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="btn btn-outline-dark">Submit</button>
+            </div>
+        </form>
     </div>
 </main>
 <footer></footer>
